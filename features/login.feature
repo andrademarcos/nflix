@@ -1,33 +1,25 @@
-#language: pt
+      #language: pt
 
-Funcionalidade: Login
-Para que eu possa gerenciar os filmes do catálogo Ninjaflix
-Sendo um usuário previamente cadastrado
-Posso acessar o sistema com o meu email e senha
+      Funcionalidade: Login
+      Para que eu possa gerenciar os filmes do catálogo Ninjaflix
+      Sendo um usuário previamente cadastrado
+      Posso acessar o sistema com o meu email e senha
 
-@login_happy
-Cenario: Acesso
-Quando eu faço login com "tony@stark.com" e "pwd123"
-Então devo ser autenticado
-E devo ver "Tony Stark" na área logada
+      @login_happy
+      Cenario: Acesso
+      Quando eu faço login com "tony@stark.com" e "pwd123"
+      Então devo ser autenticado
+      E devo ver "Tony Stark" na área logada
 
-@login_hapless
-Cenário: Senha inválida
-Quando eu faço login com "tony@stark.com" e "abc123"
-Então não devo ser autenticado
-E devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
+      @login_hapless
+      Esquema do Cenário: Login sem sucesso
+      Quando eu faço login com <email> e <senha>
+      Então não devo ser autenticado
+      E devo ver a mensagem de alerta <texto>
 
-Cenário: Usuário não existe
-Quando eu faço login com "404@stark.com" e "abc123"
-Então não devo ser autenticado
-E devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
-
-Cenário: Email não informado
-Quando eu faço login com "" e "abcssd"
-Então não devo ser autenticado
-E devo ver a mensagem de alerta "Opps. Cadê o email?"
-
-Cenário: Senha não informada
-Quando eu faço login com "teste@gmail.com" e ""
-Então não devo ser autenticado
-E devo ver a mensagem de alerta "Opps. Cadê a senha?"
+      Exemplos:
+      | email             | senha     | texto                          |
+      | "tony@stark.com"  | "abc123"  | "Usuário e/ou senha inválidos" |
+      | "404@stark.com"   | "abc1234" | "Usuário e/ou senha inválidos" |
+      | ""                | "abcssd"  | "Opps. Cadê o email?"          |
+      | "teste@gmail.com" | ""        | "Opps. Cadê a senha?"          |
