@@ -1,7 +1,7 @@
 class MoviePage
   include Capybara::DSL
   def add
-    find('.nc-simple-add').click
+    find('.movie-add').click
   end
 
   def create(movie)

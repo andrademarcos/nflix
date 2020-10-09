@@ -7,7 +7,6 @@ end
 Quando('eu faço o cadastro deste filmes') do
   @movie_page.add
   @movie_page.create(@movie)
-  sleep 3
 end
 
 Então('devo ver o novo filme na lista') do
