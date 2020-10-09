@@ -1,24 +1,25 @@
-      #language:pt
+                  #language:pt
 
-      Funcionalidade: Cadastro de filmes
-      Para que eu posso disponibilizar novos títulos no catálogo
-      Sendo um gestor de catálogo
-      Posso cadastrar um novo filme
+                  @login
+                  Funcionalidade: Cadastro de filmes
+                  Para que eu posso disponibilizar novos títulos no catálogo
+                  Sendo um gestor de catálogo
+                  Posso cadastrar um novo filme
 
-      @new_movie
-      Esquema do Cenário: Novo filmes
-      O gestor de catálago cadastra um novo filme através do formulário,
-      e um novo registro é inserido no catálogo Ninjaflix
+                  @new_movie
+                  Esquema do Cenário: Novo filmes
+                  O gestor de catálago cadastra um novo filme através do formulário,
+                  e um novo registro é inserido no catálogo Ninjaflix
 
-      Dado que <codigo> é um novo filme
-      Quando eu faço o cadastro deste filmes
-      Então devo ver o novo filme na lista
+                  Dado que <codigo> é um novo filme
+                  Quando eu faço o cadastro deste filmes
+                  Então devo ver o novo filme na lista
 
-      Exemplos:
-      | codigo     |
-      | "ultimato" |
-      | "spider"   |
-      | "joker"    |
+                  Exemplos:
+                  | codigo     |
+                  | "ultimato" |
+                  | "spider"   |
+                  | "joker"    |
 
 Cenário: Sem nome
 Quando eu tento cadastrar um filme sem o nome
