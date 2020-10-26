@@ -12,7 +12,7 @@
       e um novo registro é inserido no catálogo Ninjaflix
 
       Dado que <codigo> é um novo filme
-      Quando eu faço o cadastro deste filmes
+      Quando eu faço o cadastro deste filme
       Então devo ver o novo filme na lista
 
       Exemplos:
@@ -28,7 +28,7 @@
       exibe uma notificação para o usuário
 
       Dado que <codigo> é um novo filme
-      Quando eu faço o cadastro deste filmes
+      Quando eu faço o cadastro deste filme
       Então devo ver a notificação <texto>
 
       Exemplos:
@@ -38,7 +38,13 @@
       | "no_year"   | "Oops - Faltou o ano de lançamento também!"    |
       | "no_date"   | "Oops - Quase lá, só falta a data de estréia!" |
 
+@dup_movie
 Cenário: Duplicado
-Dado que "Deadpool 2" já foi cadastrado
+O gestor de catálogo tenta cadastrar um filme, porém o título
+já foi cadastrado em outro momento e o sistema notifica o usuário
+informando que o título já existe
+
+Dado que "deadpool2" é um novo filme
+Mas este filme já existe no catálogo
 Quando eu faço o cadastro deste filme
-Então devo ver a notificação "Oops -Este titulo já existe no Ninjaflix"
+Então devo ver a notificação "Oops - Este titulo já existe no Ninjaflix."
